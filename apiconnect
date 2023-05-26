@@ -1,0 +1,22 @@
+const Twit = require('twit');
+
+// Create a new Twit instance with your API keys and access tokens
+const twitClient = new Twit({
+  consumer_key: 'YOUR_CONSUMER_KEY',
+  consumer_secret: 'YOUR_CONSUMER_SECRET',
+  access_token: 'YOUR_ACCESS_TOKEN',
+  access_token_secret: 'YOUR_ACCESS_TOKEN_SECRET'
+});
+
+// Make a sample API request
+twitClient.get('statuses/user_timeline', { screen_name: 'TwitterDev', count: 5 }, (err, data, response) => {
+  if (err) {
+    console.error('Error:', err);
+  } else {
+    console.log('Data:', data);
+  }
+});
+
+// Replace 'YOUR_CONSUMER_KEY', 'YOUR_CONSUMER_SECRET', 'YOUR_ACCESS_TOKEN', and 'YOUR_ACCESS_TOKEN_SECRET' with your actual Twitter API keys and access tokens.
+
+// Remember to install the twit library by running npm install twit in your project directory.
